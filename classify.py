@@ -20,11 +20,11 @@ img_width, img_height = 300, 300
 parser = argparse.ArgumentParser(description='This is a Hardhat Detection program')
 parser.add_argument("-i", "--image", type=str,
                     help="File name of image to classify",
-                    default="test_pos.jpg")
+                    default="test-pos.jpg")
 fileName = parser.parse_args().image
 
 # load model
-classifier = load_model('model.h5')
+classifier = load_model('model0709.h5')
 classifier.compile(optimizer='adam',
                    loss='binary_crossentropy',
                    metrics=['accuracy'])

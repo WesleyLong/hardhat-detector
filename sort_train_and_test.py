@@ -29,15 +29,15 @@ os.makedirs('test/pos')
 for i in range(0, neg_train):
     file = "neg/" + neg_files[i]
     shutil.move(file, "train/neg")
-    
+
 for i in range(neg_train, neg):
     file = "neg/" + neg_files[i]
     shutil.move(file, "test/neg")
-    
+
 for i in range(0, pos_train):
     file = "pos/" + pos_files[i]
     shutil.move(file, "train/pos")
-    
+
 for i in range(pos_train, pos):
     file = "pos/" + pos_files[i]
     shutil.move(file, "test/pos")

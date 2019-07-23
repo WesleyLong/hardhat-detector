@@ -15,6 +15,7 @@ from keras.layers import Dropout
 from keras.layers import Flatten
 from keras.layers import MaxPooling2D
 from keras.models import Sequential
+from keras.preprocessing.image import ImageDataGenerator
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
@@ -24,7 +25,7 @@ test_data_dir = "test"
 TRAIN = len(list(paths.list_images(train_data_dir)))
 TEST = len(list(paths.list_images(test_data_dir)))
 BS = 8
-EPOCHS = 20
+EPOCHS = 3000
 img_width, img_height = 300, 300
 
 # create CNN model outline
@@ -58,8 +59,6 @@ classifier.compile(optimizer='adam',
                    metrics=['accuracy'])
 
 # create data generators and data pathways
-from keras.preprocessing.image import ImageDataGenerator
-
 trainAug = ImageDataGenerator(rescale=1. / 255,
                               shear_range=0.2,
                               zoom_range=0.2,
